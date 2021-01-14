@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: jinja if
+# key: if
+# --
+{% if ${1:condition} %}
+  ${2:body}
+{% endif %}$0

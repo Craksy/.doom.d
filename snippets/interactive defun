@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: interactive defun
+# uuid: interactive defun
+# key: defint
+# --
+(defun ${1:function} ($2)
+  (interactive ${3:"${4:codes}"})
+  $0)

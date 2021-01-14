@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: log debug
+# uuid: logd
+# key: logd
+# condition: t                 
+# --
+
+logger.debug('${1:message}'$2)$0

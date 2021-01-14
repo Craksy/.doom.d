@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: jinja block
+# key: block
+# --
+{% block ${1:content} %}
+  $0
+{% endblock %}

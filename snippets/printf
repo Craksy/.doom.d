@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: printf
+# uuid: printf
+# key: pf
+# condition: t
+# --
+
+print("$1".format($2))$0

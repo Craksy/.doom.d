@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: property
+# uuid: property-getter
+# key: prop
+# --
+@property
+def ${1:name}(self):
+    return self._$1
+
+$0

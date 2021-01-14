@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: readtheorg html export
+# uuid:
+# key: readtheorg
+# condition: t
+# --
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup$0
