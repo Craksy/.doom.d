@@ -13,7 +13,7 @@
  ;; Looks
  doom-theme                'doom-dracula
  doom-font                 "FiraCode Nerd Font Mono-11" ;;"DejaVu Sans Code-11"
- fancy-splash-image        "~/Pictures/Wallpapers/doom-purple.png"
+ fancy-splash-image        "~/Pictures/doom-purple-scaled.png"
 
  ;; Misc
  evil-split-window-below   t

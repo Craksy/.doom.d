@@ -1,0 +1,6 @@
+#+TITLE: Private Config
+
+* Doom Emacs Configuration
+
+Not much to be said. I keep this to be able to restore my config on other
+machines.
