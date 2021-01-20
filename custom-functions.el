@@ -5,6 +5,11 @@
   (evil-visual-select beg end type)
   (evil-ex "`<,`>"))
 
+(evil-define-operator evil-aya-create-operator (beg end type)
+  "Create an autosnippet from region"
+  (interactive "<R>")
+  (aya-create beg end))
+
 (evil-define-operator ex-substitute-operator (beg end type)
   "evil substitute in the region define by operator"
   (interactive "<R>")

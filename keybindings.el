@@ -8,7 +8,8 @@
       (:prefix "y"
        :desc "Insert Snippet"            "y" 'yas-insert-snippet
        :desc "Create new snippet"        "c" '+snippets/new
-       :desc "Create new alias"          "a" '+snippets/new-alias
+       :desc "Create new alias"          "A" '+snippets/new-alias
+       :desc "Create new alias"          "a" 'evil-aya-create-operator
        :desc "Find private snippet"      "p" '+snippets/find-private
        :desc "Find snippets for mode"    "m" '+snippets/find-for-current-mode
        :desc "Find any snippet"          "P" '+snippets/find
@@ -39,6 +40,7 @@
       (:prefix "b"
        :desc "New Org buffer" "o" 'open-new-org-buffer))
 
+
 ;; Since i have ; and : swapped in my keyboard layout, I am swapping evil-repeat
 ;; forward/reverse in order to have forward repeat on a key without a modifier
 (map! :map evil-snipe-parent-transient-map
@@ -47,7 +49,8 @@
       )
 
 (map! :nv "C-:" 'ex-operator
-      :n  "C-k" 'lsp-ui-doc-glance)
+      :n  "C-k" 'lsp-ui-doc-glance
+      :n  "<menu>" 'menu-bar-open)
 
 (map! :map org-roam-backlinks-mode-map
       :n "TAB" 'org-next-link

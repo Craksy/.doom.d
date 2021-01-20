@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: get-buffer-create
+# uuid: gbc
+# key: gbc
+# condition: t
+# --
+(get-buffer-create ${1:name})$0

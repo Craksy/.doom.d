@@ -11,9 +11,9 @@
  user-mail-address "hiiamnesia@gmail.com"
 
  ;; Looks
- doom-theme                'doom-gruvbox
+ doom-theme                'doom-dracula
  doom-font                 "FiraCode Nerd Font Mono-11" ;;"DejaVu Sans Code-11"
- fancy-splash-image        "~/Pictures/doom-logo-medium.png"
+ fancy-splash-image        "~/Pictures/Wallpapers/doom-purple.png"
 
  ;; Misc
  evil-split-window-below   t
@@ -22,17 +22,17 @@
  display-line-numbers-type 'visual
  which-key-idle-delay      0.3
  +ivy-buffer-preview       t
+ yas-triggers-in-field     t
  ;; ispell-dictionary         "en-custom"
 
  ;;Org stuff.
  org-directory      "~/Documents/org/"
- org-agenda-files   '("~Documents/org/notes.org"
-                    "~Documents/org/todo.org"
-                    "~Documents/org/today.org"
-                    "~Documents/org/projects.org"
-                    "~Documents/org/school.org")
+ org-agenda-files   '("~/Documents/org/notes.org"
+                      "~/Documents/org/todo.org"
+                      "~/Documents/org/today.org"
+                      "~/Documents/org/projects.org"
+                      "~/Documents/org/school.org")
  org-roam-directory "/home/amnesia/Documents/org-roam/")
-
 
 ;; Each path is relative to `+mu4e-mu4e-mail-path', which is ~/.mail by default
 (set-email-account! "gmail"
@@ -42,7 +42,6 @@
     (mu4e-refile-folder     . "/gmail/All Mail/")
     (smtpmail-smtp-user     . "hiiamnesia@gmail.com")
     (mu4e-compose-signature . "---\nSilas Wagner")))
-
 
 ;; Package specific configurations
 ;; Org-mode
@@ -62,7 +61,7 @@
   :after org-agenda
   :init
   (setq org-agenda-custom-commands
-        '(("d" "My Agenda View"
+        '(("d" "Chad-genda"
            ((agenda "" ((org-agenda-span 3)
                         (org-agenda-start-day "-0d")
                         (org-super-agenda-groups
@@ -84,9 +83,7 @@
                             (:name "Needs refiling"
                              :tag "Refile")))))))))
   :config
-  (org-super-agenda-mode)
-  (message "ENABLED ORG SUPER CHADGENDA. just testing stuff here."))
-
+  (org-super-agenda-mode))
 
 
 ;; Projectile
@@ -105,8 +102,13 @@
         avy-timeout-seconds 0.3))
 
 ;; Elcord
-(after! elcord
-  (setq elcord-use-major-mode-as-main-icon t))
+(use-package! elcord
+  :init
+  (setq
+   elcord-display-buffer-details nil
+   elcord-use-major-mode-as-main-icon t)
+  :config
+  (elcord-mode))
 
 (after! company
   (setq company-show-numbers t)

@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: __foobar
+# uuid: __foobar
+# condition: t
+# --
+;; This is a test template
+(defun very-test ()
+  (message "Project name: %s" `(doom-project-name)`))
+  `(format "test")`
+
+;;just testing some code expansion:
+
+`(format "testvar is: %s" testvar)`
+`(or (buffer-file-name) "No file")`
