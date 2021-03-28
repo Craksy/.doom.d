@@ -9,7 +9,7 @@
        :desc "Insert Snippet"            "y" 'yas-insert-snippet
        :desc "Create new snippet"        "c" '+snippets/new
        :desc "Create new alias"          "A" '+snippets/new-alias
-       :desc "Create new alias"          "a" 'evil-aya-create-operator
+       :desc "Create new autosnippet"    "a" 'evil-aya-create-operator
        :desc "Find private snippet"      "p" '+snippets/find-private
        :desc "Find snippets for mode"    "m" '+snippets/find-for-current-mode
        :desc "Find any snippet"          "P" '+snippets/find
@@ -38,17 +38,25 @@
        :desc "Search Buffer" "b" '+default/search-buffer)
 
       (:prefix "b"
-       :desc "New Org buffer" "o" 'open-new-org-buffer))
+       :desc "New Org buffer" "o" 'open-new-org-buffer)
+
+      (:prefix "TAB"
+       :desc "Previous workspace" "TAB" '+workspace/other
+       :desc "Display tab bar" "TAB" '+workspace/other))
 
 
-;; Since i have ; and : swapped in my keyboard layout, I am swapping evil-repeat
-;; forward/reverse in order to have forward repeat on a key without a modifier
-(map! :map evil-snipe-parent-transient-map
-      "," 'evil-snipe-repeat
-      ";" 'evil-snipe-repeat-reverse
-      )
+(map! :leader
+      :desc "evaluate expression" ":" 'pp-eval-expression
+      :desc "Counsel M-x" ";" 'counsel-M-x)
 
-(map! :nv "C-:" 'ex-operator
+;; ;; Since i have ; and : swapped in my keyboard layout, I am swapping evil-repeat
+;; ;; forward/reverse in order to have forward repeat on a key without a modifier
+;; (map! :map evil-snipe-parent-transient-map
+;;       "," 'evil-snipe-repeat
+;;       ";" 'evil-snipe-repeat-reverse
+;;       )
+
+(map! :nv "C-;" 'ex-operator
       :n  "C-k" 'lsp-ui-doc-glance
       :n  "<menu>" 'menu-bar-open)
 
@@ -65,3 +73,8 @@
   (push
    '((nil . "winum-select-window-[2-5]") . t)
    which-key-replacement-alist))
+
+(after! org-super-agenda
+  (map! :map org-super-agenda-header-map
+        "j" 'nil
+        "k" 'nil))

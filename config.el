@@ -34,6 +34,12 @@
                       "~/Documents/org/school.org")
  org-roam-directory "/home/amnesia/Documents/org-roam/")
 
+(add-hook 'server-switch-hook #'raise-frame)
+
+(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
+(add-hook! '+doom-dashboard-mode-hook (hide-mode-line-mode 1) (hl-line-mode -1))
+(setq-hook! '+doom-dashboard-mode-hook evil-normal-state-cursor (list nil))
+
 ;; Each path is relative to `+mu4e-mu4e-mail-path', which is ~/.mail by default
 (set-email-account! "gmail"
   '((mu4e-sent-folder       . "/gmail/Sent Mail/")
@@ -93,7 +99,9 @@
         projectile-project-search-path '("~/projects/"))
   (defun projectile-ignored-project-function(path)
     (or (mapcar (lambda (p) (s-starts-with-p p path))
-             projectile-ignored-projects))))
+                projectile-ignored-projects)))
+  (push ".venv" projectile-globally-ignored-directories)
+  (push "*node_modules" projectile-globally-ignored-directories))
 
 ;; Avy
 (after! avy
@@ -109,6 +117,13 @@
    elcord-use-major-mode-as-main-icon t)
   :config
   (elcord-mode))
+
+
+(use-package! rjsx-mode
+  :after 'javascript-mode)
+
+(use-package! react-snippets
+  :after 'javascript-mode)
 
 (after! company
   (setq company-show-numbers t)

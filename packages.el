@@ -57,3 +57,5 @@
 (package! org-super-agenda)
 (package! org-ql)
 (package! tron-legacy-theme)
+(package! rjsx-mode)
+(package! react-snippets)

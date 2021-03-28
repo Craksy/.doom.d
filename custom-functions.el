@@ -29,17 +29,15 @@
     (with-current-buffer buffer
       (org-mode))))
 
-;; this was just me playing around while trying to learn elisp..
-;; TODO: Change this so it displays a random function on every startup.
-;; Also fix it so it doesn't add it again every time i reload.
+
 (defvar +doom-dashboard-messages
   '("The quieter you come, the more you'll hear."
     "Yay, Evil!"
-    "Talk is cheap. Show me the code!"
+    "Talk is cheap. Show me the code."
     "It's not a bug, it's a feature."
+    "LISP - Lots of Irritating Superflous Parenthesis."
     "(insert funny-quote)"
-    "It works for me ¯\\_(ツ)_/¯"))
-
+    "It works on my machine ¯\\_(ツ)_/¯"))
 
 (defun write-something()
   (insert
@@ -50,7 +48,6 @@
   (insert "\n\n"))
 
 (push 'write-something (nthcdr 1 +doom-dashboard-functions))
-
 
 (defvar common-buffer-types '(
                               ("Elisp" . emacs-lisp-mode)
